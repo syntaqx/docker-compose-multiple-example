@@ -1,0 +1,9 @@
+services:
+
+  api:
+    image: syntaqx/echo-server
+    ports:
+      - "8080"
+
+  postgres:
+    image: postgres:alpine

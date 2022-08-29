@@ -1,0 +1,21 @@
+services:
+
+  app:
+    build: .
+    environment:
+      API_URL: http://api:8080
+    ports:
+      - "8080:8080"
+    networks:
+      - default
+      - external_default
+
+  postgres:
+    image: postgres:alpine
+    networks:
+      - default
+
+networks:
+  default:
+  external_default:
+    external: true
