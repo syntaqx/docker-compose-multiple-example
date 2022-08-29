@@ -6,8 +6,6 @@ RUN apk add --update --no-cache \
 
 WORKDIR /src
 
-# NOTE: --mount is incompatible with Docker on Heroku
-
 COPY go.mod* go.sum* ./
 RUN --mount=type=cache,target=/go/pkg/mod go mod download
 RUN go mod download
