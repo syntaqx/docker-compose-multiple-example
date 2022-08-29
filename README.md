@@ -16,6 +16,12 @@ docker compose up -d
 
 ### Changes to your project
 
-Now, in order to talk to that project, you're going to need to make some
-network changes to yours.. You can see those changes in the `project` folder
-under its `docker-compose.yml`
+Now, in order for _your project_ (example in the `project` folder) to talk to
+that external project, you'll want to make some changes to your networking
+section.
+
+Reference the [project/docker-compose.yml](./project/docker-compose.yml) for
+all changes, but you'll mostly notice that we're explicit by defining the
+`default` network for things that your project defines, and talk to eachother,
+and we explicitly define the `external` network for the things that need to
+talk outward.
